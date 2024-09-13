@@ -18,7 +18,24 @@ def parse_packaging(packaging_data: str) -> list[dict]:
     input: "20 pieces in 1 pack / 10 packs in 1 carton / 4 cartons in 1 box"
     output: [{ 'pieces' : 20}, {'packs' : 10}, {'carton' : 4}, {'box' : 1}]
     '''
-    pass
+    #initialize list to store packages
+    packages = []
+    #split the packaging data by '/'
+    for data in packaging_data.split('/'):
+        #split the data by 'in' to get the quantity and item
+        item = data.split(" in ")[0]
+        quantity = int(item.split()[0])
+        item = item.split()[1].strip()
+        #append the item and quantity to the packages list
+        packages.append({item: quantity})
+
+    #split the last data by 'in' to get the quantity and item
+    item = data.split(" in ")[-1]
+    quantity = int(item.split()[0])
+    item = item.split()[1].strip()
+    packages.append({item: quantity})
+
+    return packages
 
 def calc_total_units(package: list[dict]) -> int:
     '''
@@ -32,8 +49,10 @@ def calc_total_units(package: list[dict]) -> int:
     input: [{ 'pieces' : 20}, {'packs' : 10}, {'carton' : 4}, {'box' : 1}]
     output: 800 (e.g. 20*10*4*1)
     '''
+    #initialize total to 1
     total = 1
     for item in package:
+        #multiply the total by the value of the item
         total = total * list(item.values())[0]
     return total
 
@@ -51,6 +70,7 @@ def get_unit(package: list[dict]) -> str:
     output: pieces
 
     '''
+    #return the key of the first item in the list
     return list(package[0].keys())[0]
 
 # This will only run from here, not when imported
