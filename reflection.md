@@ -1,7 +1,7 @@
 # Reflection
 
-Student Name:  name
-Sudent Email:  email
+Student Name:  Gabe Lucey
+Sudent Email:  gplucey@syr.edu
 
 ## Instructions
 
@@ -23,3 +23,7 @@ Examples:
 
 `--- Reflection Below This Line ---`
 
+I slightly struggled with this assignment as I had trouble whn creeating the first function. I kept having a problem where the functon would struggle to strip the string correctly. After checking the solution, I believe this may have been because my original code was missing the append of the last quantity and item. I now understand that these last lines of code are necesssary to obtain the last item in the dictionary.
+I also noticed an error when trying to run the program.py code. In the packaging.txt file I noticed that there was an "i" where there was supposed to be a "1" which caused my code ot run incorreclty at first. 
+After completing this assignemnt there are certain concepts that I understand well and others that I may need more work on. This assignment helped me refresh my skills on reading in json files which is done with "with open". After struggling so much with the first parse function, however, I will need to refresh my skills on using brackets to split strings correctly. 
+Overall, I had a little bit of trouble with this assignment but I used tools like github copilot to help me further understand code such as the parse packaging function.
